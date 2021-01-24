@@ -16,6 +16,7 @@ on:
 # - You can manually build an image via the Run Workflow option in Actions and specify the image tag in the form
 
 env:
+  DOCKER_IMAGE_TAG: latest
   DOCKERHUB_USERNAME: stephens
   DOCKER_IMAGE_NAME: stephens/gollum
 
@@ -25,9 +26,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
-
       - name: Import environment variables from a file
         id: import-env
         shell: bash
@@ -35,6 +33,9 @@ jobs:
           while read line; do
             echo "$line" >> $GITHUB_ENV
           done < workflow.env
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
