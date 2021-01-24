@@ -26,13 +26,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Import environment variables from a file
-        id: import-env
-        shell: bash
-        run: |
-          while read line; do
-            echo "$line" >> $GITHUB_ENV
-          done < workflow.env
+#      - name: Import environment variables from a file
+#        id: import-env
+#        shell: bash
+#        run: |
+#          while read line; do
+#            echo "$line" >> $GITHUB_ENV
+#          done < workflow.env
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -55,5 +55,5 @@ jobs:
 #          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
           push: true
           tags: |
-            ${{ env.DOCKER_IMAGE_NAME }}:latest
+#            ${{ env.DOCKER_IMAGE_NAME }}:latest
             ${{ env.DOCKER_IMAGE_NAME }}:${{ env.DOCKER_IMAGE_TAG }}
