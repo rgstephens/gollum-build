@@ -16,7 +16,6 @@ on:
 # - You can manually build an image via the Run Workflow option in Actions and specify the image tag in the form
 
 env:
-  DOCKER_IMAGE_TAG: 'latest'
   DOCKERHUB_USERNAME: stephens
   DOCKER_IMAGE_NAME: stephens/gollum
 
