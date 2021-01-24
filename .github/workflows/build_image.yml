@@ -31,6 +31,9 @@ jobs:
 
       - name: Import environment variables from a file
         id: import-env
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "workflow.env"
         shell: bash
         run: |
           while read line; do
