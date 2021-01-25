@@ -1,0 +1,12 @@
+version: "3"
+services:
+  gollum:
+    image: stephens/gollum
+    restart: unless-stopped
+    volumes:
+      - ./wiki:/wiki
+    ports:
+      - "80:80"
+    entrypoint:
+      #["gollum", "--port", "80"]
+      ["gollum", "--port", "80", "--config", "config.rb"]
