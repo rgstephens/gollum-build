@@ -3,6 +3,7 @@ RUN apt-get -y update && apt-get -y install libicu-dev cmake git && rm -rf /var/
 RUN gem install github-linguist
 RUN gem install gollum
 RUN gem install org-ruby  # optional
+COPY config.rb .
 WORKDIR /wiki
 ENTRYPOINT ["gollum", "--port", "80"]
 EXPOSE 80

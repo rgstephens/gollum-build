@@ -1,3 +1,7 @@
+# - When there is a push to master, it automatically builds the image and uses the `latest` tag
+# - On a `pull_request`, it automatically builds the image and sets the image tag by reading the `workflow.env` file which should have an entry like `DOCKER_IMAGE_TAG=1.0.0`
+# - You can manually build an image via the Run Workflow option in Actions and specify the image tag in the form
+
 on:
   push:
     branches:
@@ -10,10 +14,6 @@ on:
         description: 'Image Tag'
         required: true
         default: 'latest'
-
-# - When there is a push to master, it automatically builds the image and uses the `latest` tag
-# - On a `pull_request`, it automatically builds the image and sets the image tag by reading the `workflow.env` file which should have an entry like `DOCKER_IMAGE_TAG=1.0.0`
-# - You can manually build an image via the Run Workflow option in Actions and specify the image tag in the form
 
 env:
   DOCKER_IMAGE_TAG: latest
