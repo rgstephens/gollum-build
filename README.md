@@ -11,4 +11,4 @@ Currently builds images for the following architectures:
 
 # Docker Hub
 
-Images pushed to 
+Images are pushed to Docker Hub [stephens/gollum](https://hub.docker.com/r/stephens/gollum/tags?page=1&ordering=last_updated)
